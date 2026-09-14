@@ -1,9 +1,1 @@
-{
-  "name":"HILLO",
-  "short_name":"HILLO",
-  "start_url":"/",
-  "display":"standalone",
-  "background_color":"#f6f8fb",
-  "theme_color":"#0A2540",
-  "icons":[]
-}
+{"name":"HILLO","short_name":"HILLO","start_url":"./","display":"standalone","background_color":"#f6f8fb","theme_color":"#0b3155"}
