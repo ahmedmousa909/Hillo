@@ -11,4 +11,4 @@ function saveTask(){let t=title.value.trim();if(!t)return alert('Bitte Titel ein
 function render(){let a=JSON.parse(localStorage.getItem('hilloTasks')||'[]');mytasks.innerHTML=a.length?a.map(x=>`<div class="card"><div class="tasktop"><span class="badge">${x.cat}</span><b>${x.b} €</b></div><h3>${x.t}</h3><p>${x.d||'Keine Beschreibung'}</p></div>`).join(''):'<p>Noch keine Aufgabe erstellt.</p>'}
  const SUPABASE_URL = 'https://ikjwqvnyzfmukqjrnjvj.supabase.co/rest/v1/';
 const SUPABASE_KEY = 'sb_publishable_Mz2o-t2hMhM2AhJUJclbfQ_0Sqt_zxu';
-</script></body></html>
+</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></body></html>
