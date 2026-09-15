@@ -1,96 +1,20 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b3155"><link rel="manifest" href="manifest.webmanifest"><title>HILLO</title><style>
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#f6f8fb;color:#10233a}.app{max-width:520px;margin:auto;padding-bottom:80px}.hero{background:linear-gradient(145deg,#082b4b,#0d416e);color:#fff;padding:25px 20px 30px;border-radius:0 0 34px 34px}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-size:30px;font-weight:900}.pill,.badge{border-radius:99px;padding:7px 10px}.pill{background:#ffffff18;border:1px solid #ffffff35}.hero h1{font-size:30px;line-height:1.08;margin:28px 0 8px}.hero p{color:#d7e3ee}.search{background:white;color:#778494;padding:15px;border-radius:17px;margin-top:20px}main{padding:20px}.actions{display:grid;grid-template-columns:1.2fr 1fr;gap:10px}.btn{border:0;border-radius:16px;padding:16px;font-weight:800}.primary{background:#176bff;color:#fff}.soft{background:#e8f0ff;color:#12385f}.row{display:flex;justify-content:space-between;align-items:center}.row h2{font-size:20px}.link{color:#176bff;font-weight:700}.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.cat,.card{background:#fff;border:1px solid #e5eaf0;border-radius:18px}.cat{padding:15px 7px;text-align:center;font-weight:700}.ico{display:block;font-size:27px;margin-bottom:6px}.card{padding:15px;margin:10px 0}.helper{display:flex;gap:12px;align-items:center}.avatar{width:55px;height:55px;border-radius:50%;background:#e7efff;display:grid;place-items:center;font-size:26px}.grow{flex:1}.name{font-weight:850}.meta{color:#6c7a8b;font-size:13px;margin-top:4px}.price{font-weight:900}.badge{font-size:11px;background:#dff7ee;color:#126044;font-weight:750}.tasktop,.taskfoot{display:flex;justify-content:space-between}.card h3{margin:9px 0 6px}.card p{color:#6c7a8b;font-size:13px;margin:0}.taskfoot{margin-top:13px;font-size:13px;font-weight:700}.screen{display:none}.screen.active{display:block}.form{background:#fff;border:1px solid #e5eaf0;border-radius:20px;padding:16px}.field{margin:12px 0}.field label{display:block;font-size:13px;font-weight:750;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:13px;border:1px solid #dfe5ec;border-radius:12px;font:inherit}.field textarea{min-height:90px}.profile{text-align:center}.bigav{width:82px;height:82px;border-radius:50%;background:#e7efff;display:grid;place-items:center;font-size:38px;margin:auto}.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:18px}.stats b{display:block}.stats span{font-size:11px;color:#6c7a8b}.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);height:72px;background:#fff;border-top:1px solid #e5eaf0;display:grid;grid-template-columns:repeat(4,1fr)}.nav button{border:0;background:none;color:#778494;font-weight:700}.nav button.active{color:#176bff}.nav span{display:block;font-size:21px}
-</style></head><body><div class="app">
- <section id="auth" class="screen">
-  <main>
-    <h1>Willkommen bei HILLO 👋</h1>
-    <p>Einloggen oder kostenlos registrieren.</p>
-
-    <div class="card">
-      <label>E-Mail</label>
-      <input id="authEmail" type="email" placeholder="name@email.de">
-
-      <label>Passwort</label>
-      <input id="authPassword" type="password" placeholder="Mindestens 6 Zeichen">
-
-      <button onclick="hilloRegister()">Registrieren</button>
-
-      <button onclick="hilloLogin()" style="margin-top:10px;">
-        Einloggen
-      </button>
-
-      <p id="authMessage"></p>
-    </div>
-  </main>
- </section>
-<section id="home" class="screen active"><header class="hero"><div class="top"><div class="brand">HILLO</div><div class="pill">📍 In deiner Nähe</div></div><h1>Hilfe, genau wenn du sie brauchst.</h1><p>Finde vertrauenswürdige Helfer in deiner Nähe — schnell und unkompliziert.</p><div class="search">🔎 Was brauchst du heute?</div></header><main><div class="actions"><button class="btn primary" onclick="go('create')">＋ Aufgabe erstellen</button><button class="btn soft" onclick="go('profile')">👤 Mein Profil</button></div><div class="row"><h2>Kategorien</h2><span class="link">Alle</span></div><div class="categories"><div class="cat"><span class="ico">📦</span>Paket</div><div class="cat"><span class="ico">🛒</span>Einkauf</div><div class="cat"><span class="ico">🧹</span>Haushalt</div><div class="cat"><span class="ico">🛠️</span>Montage</div><div class="cat"><span class="ico">🌿</span>Garten</div><div class="cat"><span class="ico">💻</span>Technik</div></div><div class="row"><h2>Top Helfer</h2><span class="link">Mehr</span></div><div class="card helper"><div class="avatar">👩</div><div class="grow"><div class="name">Sofia M. <span class="badge">✓ Verifiziert</span></div><div class="meta">⭐ 4.9 (48) · Haushalt & Einkauf</div></div><div class="price">18 €/h</div></div><div class="card helper"><div class="avatar">👨</div><div class="grow"><div class="name">Daniel K.</div><div class="meta">⭐ 4.8 (31) · Montage & Tragen</div></div><div class="price">22 €/h</div></div><div class="row"><h2>In deiner Nähe</h2><span class="link">Alle</span></div><div class="card"><div class="tasktop"><span class="badge">Einkauf</span><b>25 €</b></div><h3>Einkauf für heute Nachmittag</h3><p>Kleiner Supermarkt-Einkauf, ca. 8 Artikel.</p><div class="taskfoot"><span>📍 1,2 km</span><span>Heute · 16:00</span></div></div></main></section>
-<section id="create" class="screen"><main><div class="row"><h1>Aufgabe erstellen</h1><span class="link" onclick="go('home')">Schließen</span></div><div class="form"><div class="field"><label>Was brauchst du?</label><input id="title" placeholder="z. B. Einkauf abholen"></div><div class="field"><label>Kategorie</label><select id="category"><option>Einkauf</option><option>Paket</option><option>Haushalt</option><option>Montage</option><option>Garten</option><option>Technik</option></select></div><div class="field"><label>Beschreibung</label><textarea id="desc" placeholder="Beschreibe die Aufgabe…"></textarea></div><div class="field"><label>Budget (€)</label><input id="budget" type="number" placeholder="25"></div><button class="btn primary" style="width:100%" onclick="saveTask()">Aufgabe veröffentlichen</button></div><h2>Meine Aufgaben</h2><div id="mytasks"></div></main></section>
-<section id="tasks" class="screen"><main><h1>Aufgaben</h1><div class="card"><div class="tasktop"><span class="badge">Paket</span><b>15 €</b></div><h3>Paket bei der Post abholen</h3><p>Kleine Sendung abholen und vorbeibringen.</p><div class="taskfoot"><span>📍 0,8 km</span><span>Heute</span></div></div><div class="card"><div class="tasktop"><span class="badge">Garten</span><b>35 €</b></div><h3>Hilfe im Garten</h3><p>Leichte Gartenarbeit für ca. zwei Stunden.</p><div class="taskfoot"><span>📍 3,1 km</span><span>Samstag</span></div></div></main></section>
-<section id="profile" class="screen"><main><h1>Mein Profil</h1><div class="card profile"><div class="bigav">👤</div><h2>Willkommen bei HILLO</h2><p>Demo-Profil · V0.2</p><div class="stats"><div><b>4.9</b><span>Bewertung</span></div><div><b>12</b><span>Aufgaben</span></div><div><b>100%</b><span>Zuverlässig</span></div></div></div><div class="card"><h3>🙋 Ich brauche Hilfe</h3><p>Erstelle Aufgaben und finde passende Helfer.</p></div><div class="card"><h3>💼 Ich möchte helfen</h3><p>Biete Fähigkeiten an und verdiene Geld.</p></div></main></section>
-<nav class="nav"><button class="active" data-id="home" onclick="go('home')"><span>⌂</span>Home</button><button data-id="create" onclick="go('create')"><span>＋</span>Erstellen</button><button data-id="tasks" onclick="go('tasks')"><span>▣</span>Aufgaben</button><button data-id="profile" onclick="go('profile')"><span>●</span>Profil</button></nav></div><script>
-function go(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.id===id));scrollTo(0,0);if(id==='create')render()}
-function saveTask(){let t=title.value.trim();if(!t)return alert('Bitte Titel eingeben');let a=JSON.parse(localStorage.getItem('hilloTasks')||'[]');a.unshift({t,cat:category.value,b:budget.value||'—',d:desc.value});localStorage.setItem('hilloTasks',JSON.stringify(a));title.value='';render();alert('Aufgabe gespeichert ✓')}
-function render(){let a=JSON.parse(localStorage.getItem('hilloTasks')||'[]');mytasks.innerHTML=a.length?a.map(x=>`<div class="card"><div class="tasktop"><span class="badge">${x.cat}</span><b>${x.b} €</b></div><h3>${x.t}</h3><p>${x.d||'Keine Beschreibung'}</p></div>`).join(''):'<p>Noch keine Aufgabe erstellt.</p>'}
- const SUPABASE_URL = 'https://ikjwqvnyzfmukqjrnjvj.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_Mz2o-t2hMhM2AhJUJclbfQ_0Sqt_zxu';
-</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0877f9"><title>HILLO – Hilfe in deiner Nähe</title><link rel="manifest" href="manifest.webmanifest"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><style>
+:root{--blue:#0877f9;--blue2:#075ed2;--green:#35c76f;--ink:#0d1b2a;--muted:#687386;--bg:#f5f8fc;--card:#fff;--line:#e7edf5;--shadow:0 14px 40px rgba(13,43,78,.10)}*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--ink)}button,input{font:inherit}button{cursor:pointer}.shell{max-width:1180px;margin:auto;padding:0 18px}.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:9px;font-size:25px;font-weight:900;letter-spacing:.4px}.brand img{width:42px;height:42px;object-fit:contain}.navlinks{display:flex;align-items:center;gap:12px}.ghost,.primary{border:0;border-radius:13px;padding:11px 16px;font-weight:800}.ghost{background:#eef5ff;color:var(--blue)}.primary{background:linear-gradient(135deg,var(--blue),#168cff);color:white;box-shadow:0 8px 20px rgba(8,119,249,.22)}.hero{padding:60px 0 38px;background:radial-gradient(circle at 80% 10%,rgba(53,199,111,.16),transparent 27%),radial-gradient(circle at 20% 10%,rgba(8,119,249,.16),transparent 31%)}.heroGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:45px;align-items:center}.eyebrow{display:inline-flex;gap:7px;align-items:center;background:#eaf4ff;color:var(--blue2);padding:8px 12px;border-radius:999px;font-weight:800;font-size:13px}.hero h1{font-size:clamp(42px,6vw,70px);line-height:1.02;margin:18px 0 16px;letter-spacing:-2.7px}.hero h1 span{color:var(--green)}.hero p{font-size:19px;color:var(--muted);line-height:1.55;max-width:650px}.searchBox{display:flex;gap:10px;background:white;border:1px solid var(--line);padding:10px;border-radius:18px;box-shadow:var(--shadow);max-width:650px;margin-top:25px}.searchBox input{flex:1;border:0;outline:0;padding:9px 10px;font-size:17px;min-width:0}.heroCard{background:white;border:1px solid var(--line);border-radius:30px;padding:24px;box-shadow:var(--shadow);transform:rotate(1deg)}.heroCard .miniTop{display:flex;justify-content:space-between;align-items:center}.pin{font-size:12px;font-weight:800;color:var(--green);background:#edfff4;padding:7px 10px;border-radius:999px}.helper{display:flex;align-items:center;gap:13px;padding:14px 0;border-bottom:1px solid var(--line)}.avatar{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,#dcecff,#dff9e8);font-size:24px}.helper b{display:block}.helper small{color:var(--muted)}.price{margin-left:auto;text-align:right;font-weight:900}.price small{display:block;font-weight:600}.section{padding:44px 0}.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:20px}.section h2{font-size:30px;margin:0}.sectionHead p{color:var(--muted);margin:5px 0 0}.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.cat{background:white;border:1px solid var(--line);border-radius:20px;padding:19px 12px;text-align:center;box-shadow:0 6px 20px rgba(13,43,78,.05);transition:.2s}.cat:hover{transform:translateY(-3px);border-color:#bcd8ff}.cat i{font-style:normal;font-size:29px;display:block;margin-bottom:8px}.cat b{font-size:14px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:white;border:1px solid var(--line);border-radius:22px;padding:23px}.num{width:36px;height:36px;border-radius:12px;background:#eaf4ff;color:var(--blue);display:grid;place-items:center;font-weight:900}.step h3{margin:15px 0 7px}.step p{margin:0;color:var(--muted);line-height:1.5}.cta{margin:25px 0 90px;background:linear-gradient(120deg,#072a55,#0877f9);color:white;border-radius:30px;padding:36px;display:flex;justify-content:space-between;align-items:center;gap:25px}.cta h2{font-size:31px;margin:0 0 8px}.cta p{margin:0;color:#d8e8ff}.bottom{display:none}.modal{position:fixed;inset:0;background:rgba(6,20,38,.55);z-index:50;display:none;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modalCard{width:min(440px,100%);background:white;border-radius:25px;padding:25px;box-shadow:0 25px 80px rgba(0,0,0,.25)}.modalHead{display:flex;justify-content:space-between;align-items:center}.modal h2{margin:0}.close{border:0;background:#f0f4f8;width:36px;height:36px;border-radius:50%;font-size:20px}.field{margin-top:14px}.field label{font-size:13px;font-weight:800}.field input{width:100%;margin-top:6px;border:1px solid #dce5ef;border-radius:13px;padding:13px;outline:0}.wide{width:100%;margin-top:13px}.authMsg{font-size:13px;color:var(--muted);min-height:18px;margin-top:9px}.tiny{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}.results{display:none;margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:15px}.results.show{display:block}.resultTitle{font-weight:900;margin-bottom:5px}.resultSub{color:var(--muted);font-size:13px}
+@media(max-width:800px){.nav{height:62px}.navlinks .ghost{display:none}.brand{font-size:22px}.brand img{width:36px;height:36px}.hero{padding:35px 0 25px}.heroGrid{grid-template-columns:1fr}.heroCard{display:none}.hero h1{font-size:44px;letter-spacing:-1.8px}.hero p{font-size:16px}.searchBox{display:grid;grid-template-columns:1fr auto}.searchBox input{grid-column:1/-1}.cats{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:1fr}.cta{margin-bottom:100px;display:block;padding:27px}.cta .primary{margin-top:18px}.bottom{position:fixed;z-index:30;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:8px 8px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(12px)}.bottom button{border:0;background:transparent;color:#718096;font-size:11px;font-weight:700}.bottom span{display:block;font-size:21px;margin-bottom:2px}.bottom .active{color:var(--blue)}.section{padding:34px 0}.section h2{font-size:25px}}
+</style></head><body>
+<header class="top"><div class="shell nav"><div class="brand"><img src="assets/hillo-logo.png" alt="HILLO"><span>HILLO</span></div><div class="navlinks"><button class="ghost" onclick="scrollToCats()">Hilfe finden</button><button class="primary" onclick="openAuth()">Anmelden</button></div></div></header>
+<main><section class="hero"><div class="shell heroGrid"><div><div class="eyebrow">● Einfach · lokal · zuverlässig</div><h1>Hilfe in deiner <span>Nähe.</span></h1><p>Finde schnell vertrauenswürdige Menschen für Haushalt, Einkauf, Garten, Umzug, Montage und mehr – direkt in deiner Umgebung.</p><div class="searchBox"><input id="plz" inputmode="numeric" maxlength="5" placeholder="📍 Postleitzahl eingeben, z. B. 39218"><button class="primary" onclick="findNearby()">Hilfe finden</button></div><div id="results" class="results"><div class="resultTitle" id="resultTitle"></div><div class="resultSub">Demo-Vorschau: In V0.8 werden passende Helfer nach Entfernung, Bewertung und Preis sortiert.</div></div></div><div class="heroCard"><div class="miniTop"><b>Helfer in deiner Nähe</b><span class="pin">● Verfügbar</span></div><div class="helper"><div class="avatar">👨‍🔧</div><div><b>Daniel K.</b><small>Montage · ⭐ 4,9</small></div><div class="price">22 €<small>/ Std. · 1,2 km</small></div></div><div class="helper"><div class="avatar">👩‍🌾</div><div><b>Laura M.</b><small>Garten · ⭐ 4,8</small></div><div class="price">19 €<small>/ Std. · 2,4 km</small></div></div><div class="helper"><div class="avatar">🧑‍💻</div><div><b>Amir S.</b><small>Technik · ⭐ 5,0</small></div><div class="price">25 €<small>/ Std. · 3,1 km</small></div></div></div></div></section>
+<section class="section" id="cats"><div class="shell"><div class="sectionHead"><div><h2>Wobei brauchst du Hilfe?</h2><p>Wähle eine Kategorie und entdecke Helfer in deiner Nähe.</p></div></div><div class="cats"><div class="cat"><i>🏠</i><b>Haushalt</b></div><div class="cat"><i>🛒</i><b>Einkauf</b></div><div class="cat"><i>🌿</i><b>Garten</b></div><div class="cat"><i>📦</i><b>Umzug</b></div><div class="cat"><i>🛠️</i><b>Montage</b></div><div class="cat"><i>💻</i><b>Technik</b></div></div></div></section>
+<section class="section"><div class="shell"><div class="sectionHead"><div><h2>So funktioniert HILLO</h2><p>Von der Suche bis zur Hilfe – in wenigen Schritten.</p></div></div><div class="steps"><div class="step"><div class="num">1</div><h3>PLZ & Hilfe wählen</h3><p>Gib deine Postleitzahl ein und sag uns, wobei du Unterstützung brauchst.</p></div><div class="step"><div class="num">2</div><h3>Helfer vergleichen</h3><p>Vergleiche Profile, Bewertungen, Preise und Entfernung in deiner Umgebung.</p></div><div class="step"><div class="num">3</div><h3>Kontakt & buchen</h3><p>Erst wenn du buchen oder selbst Hilfe anbieten möchtest, meldest du dich an.</p></div></div></div></section>
+<div class="shell"><section class="cta"><div><h2>Du möchtest anderen helfen?</h2><p>Erstelle dein Helferprofil, lege Leistungen und Preise fest und finde Aufgaben in deiner Nähe.</p></div><button class="primary" onclick="openAuth('helper')">Hilfe anbieten →</button></section></div></main>
+<nav class="bottom"><button class="active"><span>⌂</span>Home</button><button onclick="scrollToCats()"><span>⌕</span>Entdecken</button><button onclick="openAuth()"><span>＋</span>Erstellen</button><button onclick="openAuth()"><span>♙</span>Profil</button></nav>
+<div class="modal" id="authModal" onclick="if(event.target===this)closeAuth()"><div class="modalCard"><div class="modalHead"><div><small style="color:#0877f9;font-weight:900">HILLO</small><h2>Willkommen 👋</h2></div><button class="close" onclick="closeAuth()">×</button></div><p style="color:#687386">Melde dich an oder registriere dich kostenlos, um zu buchen oder Hilfe anzubieten.</p><div class="field"><label>E-Mail</label><input id="authEmail" type="email" placeholder="name@email.de"></div><div class="field"><label>Passwort</label><input id="authPassword" type="password" minlength="6" placeholder="Mindestens 6 Zeichen"></div><button class="primary wide" onclick="hilloLogin()">Einloggen</button><button class="ghost wide" onclick="hilloRegister()">Kostenlos registrieren</button><div class="authMsg" id="authMessage"></div><div class="tiny">Mit der Registrierung stimmst du später den HILLO-Nutzungsbedingungen und Datenschutzbestimmungen zu.</div></div></div>
 <script>
-const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-async function hilloRegister() {
-  const email = document.getElementById('authEmail').value.trim();
-  const password = document.getElementById('authPassword').value;
-  const msg = document.getElementById('authMessage');
-
-  if (!email || !password) {
-    msg.innerText = 'Bitte E-Mail und Passwort eingeben.';
-    return;
-  }
-
-  const { data, error } = await supabaseClient.auth.signUp({
-    email: email,
-    password: password
-  });
-
-  if (error) {
-    msg.innerText = error.message;
-    return;
-  }
-
-  msg.innerText = 'Registrierung erfolgreich! Bitte E-Mail bestätigen.';
-}
-
-async function hilloLogin() {
-  const email = document.getElementById('authEmail').value.trim();
-  const password = document.getElementById('authPassword').value;
-  const msg = document.getElementById('authMessage');
-
-  const { data, error } = await supabaseClient.auth.signInWithPassword({
-    email: email,
-    password: password
-  });
-
-  if (error) {
-    msg.innerText = error.message;
-    return;
-  }
-
-  document.getElementById('auth').classList.remove('active');
-  document.getElementById('home').classList.add('active');
-}
-
-async function checkHilloUser() {
-  const { data } = await supabaseClient.auth.getSession();
-
-  if (data.session) {
-    document.getElementById('auth').classList.remove('active');
-    document.getElementById('home').classList.add('active');
-  } else {
-    document.getElementById('home').classList.remove('active');
-    document.getElementById('auth').classList.add('active');
-  }
-}
-
-checkHilloUser();
-</script>
-</body></html>
+const SUPABASE_URL='https://ikjwqvnyzfmukqjrnjvj.supabase.co';
+const SUPABASE_KEY='sb_publishable_Mz2o-t2hMhM2AhJUJclbfQ_OSqt_zxu';
+const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+function openAuth(){document.getElementById('authModal').classList.add('show')}function closeAuth(){document.getElementById('authModal').classList.remove('show')}function scrollToCats(){document.getElementById('cats').scrollIntoView({behavior:'smooth'})}
+function findNearby(){let p=document.getElementById('plz').value.trim();let box=document.getElementById('results');let t=document.getElementById('resultTitle');if(!/^\\d{5}$/.test(p)){box.classList.add('show');t.textContent='Bitte gib eine gültige 5-stellige PLZ ein.';return}box.classList.add('show');t.textContent='✓ Helfer rund um '+p+' werden gesucht';setTimeout(()=>document.querySelector('.heroCard')?.scrollIntoView({behavior:'smooth',block:'center'}),350)}
+async function hilloRegister(){const e=authEmail.value.trim(),p=authPassword.value;authMessage.textContent='Registrierung läuft…';const {error}=await supabaseClient.auth.signUp({email:e,password:p});authMessage.textContent=error?error.message:'Registrierung erfolgreich! Bitte E-Mail bestätigen.'}
+async function hilloLogin(){const e=authEmail.value.trim(),p=authPassword.value;authMessage.textContent='Anmeldung läuft…';const {error}=await supabaseClient.auth.signInWithPassword({email:e,password:p});if(error){authMessage.textContent=error.message}else{authMessage.textContent='Erfolgreich eingeloggt ✓';setTimeout(closeAuth,700)}}
+</script></body></html>
