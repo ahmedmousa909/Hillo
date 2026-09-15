@@ -9,4 +9,6 @@
 function go(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.id===id));scrollTo(0,0);if(id==='create')render()}
 function saveTask(){let t=title.value.trim();if(!t)return alert('Bitte Titel eingeben');let a=JSON.parse(localStorage.getItem('hilloTasks')||'[]');a.unshift({t,cat:category.value,b:budget.value||'—',d:desc.value});localStorage.setItem('hilloTasks',JSON.stringify(a));title.value='';render();alert('Aufgabe gespeichert ✓')}
 function render(){let a=JSON.parse(localStorage.getItem('hilloTasks')||'[]');mytasks.innerHTML=a.length?a.map(x=>`<div class="card"><div class="tasktop"><span class="badge">${x.cat}</span><b>${x.b} €</b></div><h3>${x.t}</h3><p>${x.d||'Keine Beschreibung'}</p></div>`).join(''):'<p>Noch keine Aufgabe erstellt.</p>'}
+ const SUPABASE_URL = 'https://ikjwqvnyzfmukqjrnjvj.supabase.co/rest/v1/';
+const SUPABASE_KEY = 'sb_publishable_Mz2o-t2hMhM2AhJUJclbfQ_0Sqt_zxu';
 </script></body></html>
