@@ -1,6 +1,28 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b3155"><link rel="manifest" href="manifest.webmanifest"><title>HILLO</title><style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#f6f8fb;color:#10233a}.app{max-width:520px;margin:auto;padding-bottom:80px}.hero{background:linear-gradient(145deg,#082b4b,#0d416e);color:#fff;padding:25px 20px 30px;border-radius:0 0 34px 34px}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-size:30px;font-weight:900}.pill,.badge{border-radius:99px;padding:7px 10px}.pill{background:#ffffff18;border:1px solid #ffffff35}.hero h1{font-size:30px;line-height:1.08;margin:28px 0 8px}.hero p{color:#d7e3ee}.search{background:white;color:#778494;padding:15px;border-radius:17px;margin-top:20px}main{padding:20px}.actions{display:grid;grid-template-columns:1.2fr 1fr;gap:10px}.btn{border:0;border-radius:16px;padding:16px;font-weight:800}.primary{background:#176bff;color:#fff}.soft{background:#e8f0ff;color:#12385f}.row{display:flex;justify-content:space-between;align-items:center}.row h2{font-size:20px}.link{color:#176bff;font-weight:700}.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.cat,.card{background:#fff;border:1px solid #e5eaf0;border-radius:18px}.cat{padding:15px 7px;text-align:center;font-weight:700}.ico{display:block;font-size:27px;margin-bottom:6px}.card{padding:15px;margin:10px 0}.helper{display:flex;gap:12px;align-items:center}.avatar{width:55px;height:55px;border-radius:50%;background:#e7efff;display:grid;place-items:center;font-size:26px}.grow{flex:1}.name{font-weight:850}.meta{color:#6c7a8b;font-size:13px;margin-top:4px}.price{font-weight:900}.badge{font-size:11px;background:#dff7ee;color:#126044;font-weight:750}.tasktop,.taskfoot{display:flex;justify-content:space-between}.card h3{margin:9px 0 6px}.card p{color:#6c7a8b;font-size:13px;margin:0}.taskfoot{margin-top:13px;font-size:13px;font-weight:700}.screen{display:none}.screen.active{display:block}.form{background:#fff;border:1px solid #e5eaf0;border-radius:20px;padding:16px}.field{margin:12px 0}.field label{display:block;font-size:13px;font-weight:750;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:13px;border:1px solid #dfe5ec;border-radius:12px;font:inherit}.field textarea{min-height:90px}.profile{text-align:center}.bigav{width:82px;height:82px;border-radius:50%;background:#e7efff;display:grid;place-items:center;font-size:38px;margin:auto}.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:18px}.stats b{display:block}.stats span{font-size:11px;color:#6c7a8b}.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);height:72px;background:#fff;border-top:1px solid #e5eaf0;display:grid;grid-template-columns:repeat(4,1fr)}.nav button{border:0;background:none;color:#778494;font-weight:700}.nav button.active{color:#176bff}.nav span{display:block;font-size:21px}
 </style></head><body><div class="app">
+ <section id="auth" class="screen">
+  <main>
+    <h1>Willkommen bei HILLO 👋</h1>
+    <p>Einloggen oder kostenlos registrieren.</p>
+
+    <div class="card">
+      <label>E-Mail</label>
+      <input id="authEmail" type="email" placeholder="name@email.de">
+
+      <label>Passwort</label>
+      <input id="authPassword" type="password" placeholder="Mindestens 6 Zeichen">
+
+      <button onclick="hilloRegister()">Registrieren</button>
+
+      <button onclick="hilloLogin()" style="margin-top:10px;">
+        Einloggen
+      </button>
+
+      <p id="authMessage"></p>
+    </div>
+  </main>
+ </section>
 <section id="home" class="screen active"><header class="hero"><div class="top"><div class="brand">HILLO</div><div class="pill">📍 In deiner Nähe</div></div><h1>Hilfe, genau wenn du sie brauchst.</h1><p>Finde vertrauenswürdige Helfer in deiner Nähe — schnell und unkompliziert.</p><div class="search">🔎 Was brauchst du heute?</div></header><main><div class="actions"><button class="btn primary" onclick="go('create')">＋ Aufgabe erstellen</button><button class="btn soft" onclick="go('profile')">👤 Mein Profil</button></div><div class="row"><h2>Kategorien</h2><span class="link">Alle</span></div><div class="categories"><div class="cat"><span class="ico">📦</span>Paket</div><div class="cat"><span class="ico">🛒</span>Einkauf</div><div class="cat"><span class="ico">🧹</span>Haushalt</div><div class="cat"><span class="ico">🛠️</span>Montage</div><div class="cat"><span class="ico">🌿</span>Garten</div><div class="cat"><span class="ico">💻</span>Technik</div></div><div class="row"><h2>Top Helfer</h2><span class="link">Mehr</span></div><div class="card helper"><div class="avatar">👩</div><div class="grow"><div class="name">Sofia M. <span class="badge">✓ Verifiziert</span></div><div class="meta">⭐ 4.9 (48) · Haushalt & Einkauf</div></div><div class="price">18 €/h</div></div><div class="card helper"><div class="avatar">👨</div><div class="grow"><div class="name">Daniel K.</div><div class="meta">⭐ 4.8 (31) · Montage & Tragen</div></div><div class="price">22 €/h</div></div><div class="row"><h2>In deiner Nähe</h2><span class="link">Alle</span></div><div class="card"><div class="tasktop"><span class="badge">Einkauf</span><b>25 €</b></div><h3>Einkauf für heute Nachmittag</h3><p>Kleiner Supermarkt-Einkauf, ca. 8 Artikel.</p><div class="taskfoot"><span>📍 1,2 km</span><span>Heute · 16:00</span></div></div></main></section>
 <section id="create" class="screen"><main><div class="row"><h1>Aufgabe erstellen</h1><span class="link" onclick="go('home')">Schließen</span></div><div class="form"><div class="field"><label>Was brauchst du?</label><input id="title" placeholder="z. B. Einkauf abholen"></div><div class="field"><label>Kategorie</label><select id="category"><option>Einkauf</option><option>Paket</option><option>Haushalt</option><option>Montage</option><option>Garten</option><option>Technik</option></select></div><div class="field"><label>Beschreibung</label><textarea id="desc" placeholder="Beschreibe die Aufgabe…"></textarea></div><div class="field"><label>Budget (€)</label><input id="budget" type="number" placeholder="25"></div><button class="btn primary" style="width:100%" onclick="saveTask()">Aufgabe veröffentlichen</button></div><h2>Meine Aufgaben</h2><div id="mytasks"></div></main></section>
 <section id="tasks" class="screen"><main><h1>Aufgaben</h1><div class="card"><div class="tasktop"><span class="badge">Paket</span><b>15 €</b></div><h3>Paket bei der Post abholen</h3><p>Kleine Sendung abholen und vorbeibringen.</p><div class="taskfoot"><span>📍 0,8 km</span><span>Heute</span></div></div><div class="card"><div class="tasktop"><span class="badge">Garten</span><b>35 €</b></div><h3>Hilfe im Garten</h3><p>Leichte Gartenarbeit für ca. zwei Stunden.</p><div class="taskfoot"><span>📍 3,1 km</span><span>Samstag</span></div></div></main></section>
@@ -11,4 +33,64 @@ function saveTask(){let t=title.value.trim();if(!t)return alert('Bitte Titel ein
 function render(){let a=JSON.parse(localStorage.getItem('hilloTasks')||'[]');mytasks.innerHTML=a.length?a.map(x=>`<div class="card"><div class="tasktop"><span class="badge">${x.cat}</span><b>${x.b} €</b></div><h3>${x.t}</h3><p>${x.d||'Keine Beschreibung'}</p></div>`).join(''):'<p>Noch keine Aufgabe erstellt.</p>'}
  const SUPABASE_URL = 'https://ikjwqvnyzfmukqjrnjvj.supabase.co/rest/v1/';
 const SUPABASE_KEY = 'sb_publishable_Mz2o-t2hMhM2AhJUJclbfQ_0Sqt_zxu';
-</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></body></html>
+</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+async function hilloRegister() {
+  const email = document.getElementById('authEmail').value.trim();
+  const password = document.getElementById('authPassword').value;
+  const msg = document.getElementById('authMessage');
+
+  if (!email || !password) {
+    msg.innerText = 'Bitte E-Mail und Passwort eingeben.';
+    return;
+  }
+
+  const { data, error } = await supabaseClient.auth.signUp({
+    email: email,
+    password: password
+  });
+
+  if (error) {
+    msg.innerText = error.message;
+    return;
+  }
+
+  msg.innerText = 'Registrierung erfolgreich! Bitte E-Mail bestätigen.';
+}
+
+async function hilloLogin() {
+  const email = document.getElementById('authEmail').value.trim();
+  const password = document.getElementById('authPassword').value;
+  const msg = document.getElementById('authMessage');
+
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
+    email: email,
+    password: password
+  });
+
+  if (error) {
+    msg.innerText = error.message;
+    return;
+  }
+
+  document.getElementById('auth').classList.remove('active');
+  document.getElementById('home').classList.add('active');
+}
+
+async function checkHilloUser() {
+  const { data } = await supabaseClient.auth.getSession();
+
+  if (data.session) {
+    document.getElementById('auth').classList.remove('active');
+    document.getElementById('home').classList.add('active');
+  } else {
+    document.getElementById('home').classList.remove('active');
+    document.getElementById('auth').classList.add('active');
+  }
+}
+
+checkHilloUser();
+</script>
+</body></html>
