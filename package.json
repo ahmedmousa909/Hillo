@@ -1,0 +1,20 @@
+{
+  "name": "hillo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HILLO web/PWA and Capacitor mobile shell",
+  "scripts": {
+    "build:web": "node scripts/build-web.mjs",
+    "cap:sync": "npm run build:web && cap sync",
+    "android:add": "npm run build:web && cap add android",
+    "ios:add": "npm run build:web && cap add ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/ios": "^8.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.0.0"
+  }
+}
